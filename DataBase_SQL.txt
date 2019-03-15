@@ -13,7 +13,7 @@ values("Programer",1),("Svarshchik",0),("Admin",1),("Jocker",0),("Product owner"
 Create Table workers(
 	id int primary key auto_increment not null,
     age int not null,
-    availability enum ("fulltime", "part time"),
+    availability enum ("fulltime", "part_time"),
     full_name char(40),
     department_Id int,
     Foreign Key (Department_Id)
@@ -21,10 +21,10 @@ Create Table workers(
 );
 
 Insert Into Workers(`age`, `availability`, `full_name`, `department_Id`)
-values(48,"part time","Aldiar Krgzbecovich",1),(22,"part time","Traktoryst Petro",4),
+values(48,"part_time","Aldiar Krgzbecovich",1),(22,"part_time","Traktoryst Petro",4),
 (27,"fulltime", "Kalyasik",6),(123, "fulltime", "Master of Proletariat", 3),(60, "fulltime", "Kazymyr", 2),
-(50,"part time", "DD", 5),(25, "fulltime", "Indus", 4), (48, "part time", "Slavko", 2),
-(13,  "part time", "Slavko's Son", 6);
+(50,"part_time", "DD", 5),(25, "fulltime", "Indus", 4), (48, "part_time", "Slavko", 2),
+(13,  "part_time", "Slavko's Son", 6);
 
 Select * From Department d cross join Workers w
 on(d.Id = w.Department_Id)
